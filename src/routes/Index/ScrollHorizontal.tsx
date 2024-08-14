@@ -1,15 +1,5 @@
-import { Badge } from "@/components/shadcn/ui/badge"
-import { Button } from "@/components/shadcn/ui/button"
-import { Card, CardContent } from "@/components/shadcn/ui/card"
 import { ScrollArea, ScrollBar } from "@/components/shadcn/ui/scroll-area"
-import { StarIcon } from "lucide-react"
-
-export interface Artwork {
-    artist: string
-    art: string
-    address: string
-    score: number // Pontuação entre 0.0 e 5.0
-}
+import { Artwork, CardBarber } from "./CardBarber"
 
 export const works: Artwork[] = [
     {
@@ -37,46 +27,7 @@ export function ScrollAreaHorizontalDemo() {
         <ScrollArea className="w-full">
             <div className="flex gap-3 pb-2">
                 {works.map((work) => {
-                    return (
-                        <Card className="flex flex-col rounded-2xl p-1">
-                            <CardContent className="p-0">
-                                <div className="relative w-40">
-                                    <Badge
-                                        variant={"secondary"}
-                                        className="absolute left-1 top-1 space-x-1 py-1"
-                                    >
-                                        <StarIcon
-                                            className="fill-primary text-primary"
-                                            size={12}
-                                        />
-                                        <span className="text-xs font-semibold">
-                                            {work.score
-                                                .toString()
-                                                .replace(".", ",")}
-                                        </span>
-                                    </Badge>
-                                    <img
-                                        src={work.art}
-                                        className="aspect-square w-full rounded-2xl object-cover"
-                                    />
-                                </div>
-                            </CardContent>
-                            <div className="flex h-full w-full flex-col gap-1 p-2">
-                                <h3 className="m-0 truncate font-semibold">
-                                    {work.artist}
-                                </h3>
-                                <p className="mb-1 text-xs text-gray-400">
-                                    {work.address}
-                                </p>
-                                <Button
-                                    className="mt-auto rounded-xl"
-                                    variant={"secondary"}
-                                >
-                                    Reservar
-                                </Button>
-                            </div>
-                        </Card>
-                    )
+                    return <CardBarber work={work} />
                 })}
             </div>
             <ScrollBar orientation="horizontal" />

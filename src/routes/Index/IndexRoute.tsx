@@ -1,9 +1,7 @@
-import { Button } from "@/components/shadcn/ui/button"
-import { Input } from "@/components/shadcn/ui/input"
-import { SearchIcon } from "lucide-react"
 import { ScrollAreaHorizontalDemo } from "./ScrollHorizontal"
 import { OptionsSearch } from "./OptionsSearch"
 import { BookingItem } from "./BookingItem"
+import { Search } from "@/components/ui/Search"
 
 export function IndexRoute() {
     return (
@@ -13,11 +11,8 @@ export function IndexRoute() {
                 <p>Segunda-feira, 06 de agosto.</p>
 
                 {/* Search */}
-                <div className="my-6 flex justify-between gap-2">
-                    <Input placeholder="Faça sua busca..." />
-                    <Button>
-                        <SearchIcon />
-                    </Button>
+                <div className="my-6">
+                    <Search />
                 </div>
 
                 <OptionsSearch />
