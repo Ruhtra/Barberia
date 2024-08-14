@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom"
 import { MapPin, Smartphone, StarIcon } from "lucide-react"
 import { Button } from "@/components/shadcn/ui/button"
 import { ServiceItem } from "./ServiceItem"
+import { toast } from "sonner"
 
 export function BarberRoute() {
     const [searchParams] = useSearchParams()
@@ -59,7 +60,21 @@ export function BarberRoute() {
                         <div key={i} className="flex items-center gap-3">
                             <Smartphone />
                             <p>(11) 99999-5151</p>
-                            <Button className="ml-auto" variant={"secondary"}>
+                            <Button
+                                onClick={() => {
+                                    toast(
+                                        "Copiado para área de transferência.",
+                                        {
+                                            description: "11 99999-5191",
+                                        },
+                                    )
+                                    navigator.clipboard.writeText(
+                                        "11 99999-5191",
+                                    )
+                                }}
+                                className="ml-auto"
+                                variant={"secondary"}
+                            >
                                 Copiar
                             </Button>
                         </div>

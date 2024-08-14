@@ -4,6 +4,7 @@ import { NavBar } from "./components/ui/NvarBar"
 import "./index.css"
 import { Footer } from "./components/ui/Footer"
 import { BarberRoute } from "./routes/Barber/BarberRoute"
+import { Toaster } from "sonner"
 
 function Render() {
     return (
@@ -20,6 +21,7 @@ export function App() {
             <div className="layout">
                 <NavBar />
                 <Render />
+                <Toaster />
                 <Footer />
             </div>
         </>
