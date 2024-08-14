@@ -1,6 +1,6 @@
 import { Search } from "@/components/ui/Search"
 import { useSearchParams } from "react-router-dom"
-import { Artwork, CardBarber } from "../Index/CardBarber"
+import { Artwork, CardBarber } from "../../components/CardBarber/CardBarber"
 
 export const works: Artwork[] = [
     {

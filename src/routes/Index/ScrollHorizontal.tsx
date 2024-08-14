@@ -1,5 +1,5 @@
 import { ScrollArea, ScrollBar } from "@/components/shadcn/ui/scroll-area"
-import { Artwork, CardBarber } from "./CardBarber"
+import { Artwork, CardBarber } from "../../components/CardBarber/CardBarber"
 
 export const works: Artwork[] = [
     {
